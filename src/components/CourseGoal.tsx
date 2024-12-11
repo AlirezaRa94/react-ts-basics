@@ -6,20 +6,20 @@ type CourseGoalProps = {
   id: number;
   title: string;
   children: ReactNode;
-  onDeleteGoal: (goalId: number) => void;
+  onDelete: (goalId: number) => void;
 };
 
 // method 2
 // type CourseGoalProps = PropsWithChildren<{ title: string }>;
 
-function CourseGoal({ id, title, onDeleteGoal, children }: CourseGoalProps) {
+function CourseGoal({ id, title, onDelete, children }: CourseGoalProps) {
   return (
     <article>
       <div>
         <h2>{title}</h2>
         {children}
       </div>
-      <button onClick={() => onDeleteGoal(id)}>Delete</button>
+      <button onClick={() => onDelete(id)}>Delete</button>
     </article>
   );
 }

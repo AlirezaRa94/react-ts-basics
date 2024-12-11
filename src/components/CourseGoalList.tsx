@@ -3,15 +3,15 @@ import CourseGoal from "./CourseGoal";
 
 type courseGoalListProps = {
   goals: courseGoalType[];
-  onDelete: (goalId: number) => void;
+  onDeleteGoal: (goalId: number) => void;
 };
 
-function CourseGoalList({ goals, onDelete }: courseGoalListProps) {
+function CourseGoalList({ goals, onDeleteGoal }: courseGoalListProps) {
   return (
     <ul>
       {goals.map((goal) => (
         <li key={goal.id}>
-          <CourseGoal id={goal.id} title={goal.title} onDeleteGoal={onDelete}>
+          <CourseGoal id={goal.id} title={goal.title} onDelete={onDeleteGoal}>
             <p>{goal.description}</p>
           </CourseGoal>
         </li>
